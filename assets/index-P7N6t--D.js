@@ -147,7 +147,7 @@ Error generating stack: `+e.message+`
           }
 
           .hero-title {
-              font-size: 3rem;
+              font-size: 3rem; /* Base size for mobile */
               font-weight: 800;
               letter-spacing: -0.05em;
               color: var(--color-text-light);
@@ -261,8 +261,8 @@ Error generating stack: `+e.message+`
           }
 
           .projects-grid {
-              display: grid;
               grid-template-columns: 1fr; /* Default: 1 column for small mobile */
+              display: grid;
               gap: 2.5rem;
           }
 
@@ -380,17 +380,22 @@ Error generating stack: `+e.message+`
               background-color: rgba(30, 41, 59, 0.5);
           }
 
-          /* Responsive Styles */
+          /* --- RESPONSIVE STYLES (The Fix) --- */
+          /* Small screens / Tablets */
           @media (min-width: 640px) {
               .hero-title {
-                  font-size: 4.5rem;
+                  font-size: 4rem; /* Scale up title slightly */
               }
               .projects-grid {
                   grid-template-columns: repeat(2, 1fr); /* Tablet (sm): 2 columns */
               }
           }
 
+          /* Large screens / Desktops */
           @media (min-width: 1024px) {
+              .hero-title {
+                  font-size: 5rem; /* Larger desktop title */
+              }
               .projects-grid {
                   grid-template-columns: repeat(4, 1fr); /* Desktop (lg): 4 columns */
               }
